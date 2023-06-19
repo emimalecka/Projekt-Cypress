@@ -1,0 +1,396 @@
+{
+  "stats": {
+    "suites": 7,
+    "tests": 10,
+    "passes": 10,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-06-19T18:31:04.135Z",
+    "end": "2023-06-19T18:32:40.396Z",
+    "duration": 96261,
+    "testsRegistered": 10,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fa6a5dd8-c1a7-448d-9b70-655aa0e4ddba",
+      "title": "",
+      "fullFile": "cypress\\e2e\\dorgerienatura.cy.js",
+      "file": "cypress\\e2e\\dorgerienatura.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2960a5a4-34fe-4649-8873-2e55c617b3a5",
+          "title": "Test check server response drogerie-natura",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC_1 Check status code 200",
+              "fullTitle": "Test check server response drogerie-natura TC_1 Check status code 200",
+              "timedOut": null,
+              "duration": 4884,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"https://drogerienatura.pl/\").then(response => {\n  expect(response.status).to.eq(200);\n  if (response.status !== 200) {\n    Cypress.runner.stop();\n  }\n});",
+              "err": {},
+              "uuid": "f7fecb4a-4b61-44e5-8b9b-8ba83b917ffe",
+              "parentUUID": "2960a5a4-34fe-4649-8873-2e55c617b3a5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f7fecb4a-4b61-44e5-8b9b-8ba83b917ffe"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4884,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "ed41ccc7-d02d-4502-8830-2ca43974c999",
+          "title": "Test of banner",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC_2 Close banner whit 'x'",
+              "fullTitle": "Test of banner TC_2 Close banner whit 'x'",
+              "timedOut": null,
+              "duration": 4048,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.ConfirmPopUp();\nNatura.getCloseBanner().should(\"be.visible\");\nNatura.getCloseBanner().click();\nNatura.getCloseBanner().should(\"not.be.visible\");",
+              "err": {},
+              "uuid": "ed359002-5cb5-4340-93fa-cc47c5c66f98",
+              "parentUUID": "ed41ccc7-d02d-4502-8830-2ca43974c999",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ed359002-5cb5-4340-93fa-cc47c5c66f98"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4048,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "5d5189a2-086e-4cf5-8e21-27a52148caf9",
+          "title": "Test of banner  ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC_3 view more information on banner whit 'Sprawdź nasze propozycje'",
+              "fullTitle": "Test of banner   TC_3 view more information on banner whit 'Sprawdź nasze propozycje'",
+              "timedOut": null,
+              "duration": 6153,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.ConfirmPopUp();\ncy.get('.bg-info').should(\"be.visible\");\ncy.get(':nth-child(6) > p > a').click();\ncy.url().should('contain', 'https://drogerienatura.pl/');",
+              "err": {},
+              "uuid": "f4c725f3-54aa-40d1-82da-a505d7da6f22",
+              "parentUUID": "5d5189a2-086e-4cf5-8e21-27a52148caf9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f4c725f3-54aa-40d1-82da-a505d7da6f22"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6153,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "e9cdbdbb-9f92-430c-ad9b-cd598e00fed4",
+          "title": "Test of Cookie pop-up",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC_4 Confirm pop-up",
+              "fullTitle": "Test of Cookie pop-up TC_4 Confirm pop-up",
+              "timedOut": null,
+              "duration": 5199,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Natura.getConfirmPopUp().should(\"be.visible\");\nNatura.getConfirmPopUp().click();\ncy.wait(2000);\nNatura.getConfirmPopUp().should(\"not.exist\");",
+              "err": {},
+              "uuid": "0d325459-782d-4339-8d21-8ce3b0010825",
+              "parentUUID": "e9cdbdbb-9f92-430c-ad9b-cd598e00fed4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0d325459-782d-4339-8d21-8ce3b0010825"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5199,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "59e47dfe-2c31-41ad-b223-91f41e27d67f",
+          "title": "Test of Cookie pop-up",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC_5 Decline pop-up",
+              "fullTitle": "Test of Cookie pop-up TC_5 Decline pop-up",
+              "timedOut": null,
+              "duration": 6775,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Natura.getDeclinePopUp().should(\"be.visible\");\nNatura.getDeclinePopUp().click();\ncy.wait(2000);\ncy.get('.overflow-y-auto.items-start > .max-w-auto > .items-center').should(\"be.visible\");",
+              "err": {},
+              "uuid": "ce6462d7-6480-44bf-8123-46867c135033",
+              "parentUUID": "59e47dfe-2c31-41ad-b223-91f41e27d67f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ce6462d7-6480-44bf-8123-46867c135033"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6775,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "92b163cd-8e45-4097-a71f-63d3998ee66a",
+          "title": "Searches, open and check products",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC_6 Search for 'szampon nivea'",
+              "fullTitle": "Searches, open and check products TC_6 Search for 'szampon nivea'",
+              "timedOut": null,
+              "duration": 14823,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#search\").clear().type(this.text[0].mySearch).type(\"{enter}\");\ncy.url().should(\"contain\", this.text[0].query);",
+              "err": {},
+              "uuid": "acd6ca86-4489-4830-b960-63eb3a8a5f3b",
+              "parentUUID": "92b163cd-8e45-4097-a71f-63d3998ee66a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_7 Open category",
+              "fullTitle": "Searches, open and check products TC_7 Open category",
+              "timedOut": null,
+              "duration": 7277,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[d=\"M0.5 12H24.5\"]').click();\ncy.get('.transition-display > .max-w-full').should('be.visible');",
+              "err": {},
+              "uuid": "c04fc824-b8fe-4375-b809-07c12f238b39",
+              "parentUUID": "92b163cd-8e45-4097-a71f-63d3998ee66a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_8 Open product 'Balsam nivea'",
+              "fullTitle": "Searches, open and check products TC_8 Open product 'Balsam nivea'",
+              "timedOut": null,
+              "duration": 18629,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[href=\"/catalogsearch/result/?q=nivea\"]').click();\ncy.get('img[alt=\"NIVEA NIVEA BALSAM REGENERACYJNY 400 ML\"]').click();\ncy.get('#description > .w-full > .prose').should('be.visible');",
+              "err": {},
+              "uuid": "8e80228c-eeeb-4252-b307-f582acdc737b",
+              "parentUUID": "92b163cd-8e45-4097-a71f-63d3998ee66a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_9 Check available promotions",
+              "fullTitle": "Searches, open and check products TC_9 Check available promotions",
+              "timedOut": null,
+              "duration": 7219,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.active > a > .pagebuilder-slide-wrapper').should('be.visible');",
+              "err": {},
+              "uuid": "f324b791-9e45-414d-8b91-a2a5eba59039",
+              "parentUUID": "92b163cd-8e45-4097-a71f-63d3998ee66a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "acd6ca86-4489-4830-b960-63eb3a8a5f3b",
+            "c04fc824-b8fe-4375-b809-07c12f238b39",
+            "8e80228c-eeeb-4252-b307-f582acdc737b",
+            "f324b791-9e45-414d-8b91-a2a5eba59039"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 47948,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "e536ed3e-685e-4af1-996c-d35e11dc198a",
+          "title": "Login to Drogerie Natura",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC_10 Login with incorrect password",
+              "fullTitle": "Login to Drogerie Natura TC_10 Login with incorrect password",
+              "timedOut": null,
+              "duration": 20697,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.ConfirmPopUp();\ncy.get('#customer-menu > .w-6').click();\ncy.get('.absolute > .btn-primary').click();\ncy.wait(3000);\ncy.ConfirmPopUp();\ncy.get('#customer-login-form > .fieldset').should(\"be.visible\");\ncy.get('#email').type(_loginDrogerieNatura.default.login);\ncy.get('#pass').type(_loginDrogerieNatura.default.password);\ncy.get('.fieldset > .actions-toolbar > .btn > span').click();\ncy.get('.message > span').should(\"contain\", \"Twoje dane logowania są nieprawidłowe lub Twoje konto zostało tymczasowo zablokowane. Proszę chwilę zaczekać i spróbować ponownie.\");",
+              "err": {},
+              "uuid": "676f3d7c-8b44-4c7d-8daa-2ade597687a4",
+              "parentUUID": "e536ed3e-685e-4af1-996c-d35e11dc198a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "676f3d7c-8b44-4c7d-8daa-2ade597687a4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 20697,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[status]_[datetime]-[name]-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportFilename": "[status]_[datetime]-[name]-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
